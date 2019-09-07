@@ -52,7 +52,7 @@ public class PlanetChooser : MonoBehaviour {
         currentGravity = new Vector2(0, earthGravity);
         Debug.Log("earth choosen" + currentGravity);
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.56f, 0.77f, 1f, 1f);
-        BallGO.GetComponent<BaskeballMovement>().setBallGravity(earthGravity);
+  //      BallGO.GetComponent<BaskeballMovement>().setBallGravity(earthGravity);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
         
@@ -64,7 +64,7 @@ public class PlanetChooser : MonoBehaviour {
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.79f, 0.79f, 0.79f, 1f);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
-        BallGO.GetComponent<BaskeballMovement>().setBallGravity(moonGravity);
+ //       BallGO.GetComponent<BaskeballMovement>().setBallGravity(moonGravity);
     }
     public void JupiterChoosen()
     {
@@ -73,7 +73,7 @@ public class PlanetChooser : MonoBehaviour {
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.72f, 0.25f, 1f, 1f);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
-        BallGO.GetComponent<BaskeballMovement>().setBallGravity(jupiterGravity);
+   //     BallGO.GetComponent<BaskeballMovement>().setBallGravity(jupiterGravity);
     }
     // gravity = vector2.y , направление не равно гравитации
 }

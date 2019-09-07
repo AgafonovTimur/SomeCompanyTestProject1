@@ -18,25 +18,25 @@ public class BaskeballMovement : MonoBehaviour {
         ball_rb = GetComponent<Rigidbody2D>();
 	}
 
-    public float setBallGravity(float x)
-    {
-   //     float y = Physics2D.gravity.y;
-        currGravity = x;
-        Debug.Log("sent gravity " + x + " " +currGravity);
-        return x;
-    }
+   // public float setBallGravity(float x)
+   // {
+   ////     float y = Physics2D.gravity.y;
+   //     currGravity = x;
+   //     Debug.Log("sent gravity " + x + " " +currGravity);
+   //     return x;
+   // }
     private void FixedUpdate()
     {
-        speedY = (Vector2.up * moveSpeed) * currGravity;
+        speedY = (Vector2.up * moveSpeed)* Time.fixedDeltaTime * currGravity;
         ball_rb.AddForce(speedY);
-  //      Debug.Log(ball_rb + " " + currGravity);
+ //       Debug.Log(ball_rb + " " + speedY + " " + currGravity);
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "BottomPlatform")
-    //    { 
-    //        ball_rb.AddForce((Vector2.up * speed) * curPosX);
-    //        Debug.Log(collision.gameObject.tag);
-    //    }
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "BottomPlatform")
+        { 
+            ball_rb.AddForce((Vector2.up * speedY) * curPosX);
+  //          Debug.Log(collision.gameObject.tag);
+        }
+    }
 }
