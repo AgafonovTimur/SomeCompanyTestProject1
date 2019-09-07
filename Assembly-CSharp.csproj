@@ -61,11 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BaskeballMovement.cs" />
     <Compile Include="Assets\Scripts\ClickOnObject.cs" />
     <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\GameScore.cs" />
-    <Compile Include="Assets\Scripts\MoveBasketballToTouchPox.cs" />
     <Compile Include="Assets\Scripts\PlanetChooser.cs" />
     <Compile Include="Assets\Scripts\PlatformColorChange.cs" />
     <Compile Include="Assets\Scripts\TouchDetection.cs" />

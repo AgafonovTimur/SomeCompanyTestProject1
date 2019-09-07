@@ -49,31 +49,27 @@ public class PlanetChooser : MonoBehaviour {
     }   
     public void EarthChoosen ()
     {
-        currentGravity = new Vector2(0, earthGravity);
-        Debug.Log("earth choosen" + currentGravity);
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.56f, 0.77f, 1f, 1f);
-  //      BallGO.GetComponent<BaskeballMovement>().setBallGravity(earthGravity);
+        BallGO.GetComponent<Rigidbody2D>().gravityScale = 1f; // earth
+        Debug.Log("earth choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
         
     }
     public void MoonChoosen()
     {
-        currentGravity = new Vector2(0, moonGravity);
-        Debug.Log("moon choosen" + currentGravity);
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.79f, 0.79f, 0.79f, 1f);
+        BallGO.GetComponent<Rigidbody2D>().gravityScale = 0.163f; //  1.6/9.81 = 0.163
+        Debug.Log("moon choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
- //       BallGO.GetComponent<BaskeballMovement>().setBallGravity(moonGravity);
     }
     public void JupiterChoosen()
     {
-        currentGravity = new Vector2(0, jupiterGravity);
-        Debug.Log("jupiter choosen" + currentGravity);
+        BallGO.GetComponent<Rigidbody2D>().gravityScale = 2.497f; // 24.5/9.8 = 2.497
+        Debug.Log("jupiter choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
         SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.72f, 0.25f, 1f, 1f);
         GameScene.SetActive(true);
         MainMenu.SetActive(false);
-   //     BallGO.GetComponent<BaskeballMovement>().setBallGravity(jupiterGravity);
     }
-    // gravity = vector2.y , направление не равно гравитации
 }
