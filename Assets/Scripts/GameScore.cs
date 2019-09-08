@@ -8,14 +8,6 @@ public class GameScore : MonoBehaviour {
     [SerializeField]
     GameObject gameScoreGO;
 
-    public void ChangeGameScore ()
-    {
-        Text gameScore = gameScoreGO.GetComponent<Text>();
-        int x = PlayerPrefs.GetInt("currentScore") + 1;
-        PlayerPrefs.SetInt("currentScore", x);
-        gameScore.text = " BallHit : " + x;
-   //     Debug.Log("current score : " + PlayerPrefs.GetInt("currentScore"));
-    }
 
 	void Awake () {
  //       PlayerPrefs.DeleteAll();
@@ -30,5 +22,14 @@ public class GameScore : MonoBehaviour {
             gameScore.text = " BallHit : " + x;
         }
         Debug.Log("current score : " + PlayerPrefs.GetInt("currentScore"));
+    }
+
+    public void ChangeGameScore()
+    {
+        Text gameScore = gameScoreGO.GetComponent<Text>();
+        int x = PlayerPrefs.GetInt("currentScore") + 1;
+        PlayerPrefs.SetInt("currentScore", x);
+        gameScore.text = " BallHit : " + x;
+        //     Debug.Log("current score : " + PlayerPrefs.GetInt("currentScore"));
     }
 }

@@ -8,6 +8,7 @@ public class TouchDetection : MonoBehaviour
     float moveSpeed = 1f;
 
     Vector3 mousePos;
+    Vector3 touchPos;
     Vector2 dir;
     Rigidbody2D rb;
 
@@ -18,14 +19,24 @@ public class TouchDetection : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //if (Application.platform == RuntimePlatform.Android)
-        //{
-            if (Input.GetMouseButton(0))
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.touchCount > 0)
             {
-                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                dir = (mousePos - transform.position).normalized;
+                Touch touch1Finger = Input.GetTouch(0);
+                touchPos = Camera.main.ScreenToWorldPoint(touch1Finger.position);
+                dir = (touchPos - transform.position).normalized;
                 rb.velocity = new Vector2(dir.x * moveSpeed, dir.y * moveSpeed);
-            }  
+            }
+        }
+        //else //// edotor
+        //{
+        //    if (Input.GetMouseButton(0))
+        //    {
+        //        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //        dir = (mousePos - transform.position).normalized;
+        //        rb.velocity = new Vector2(dir.x * moveSpeed, dir.y * moveSpeed);
+        //    }
         //}
     }
 }
