@@ -1,7 +1,7 @@
-# TestProject1
- 
+# TestProject1 
+2D demo game
 
-Brief:
+Task:
 Create a mobile app for Android in Unity, using reference and short description below. 
 
 Description: 
