@@ -445,10 +445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744267e603643df479d0421950352c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneBackgroundColor: {fileID: 1106124481}
-  MainMenu: {fileID: 156467711}
-  GameScene: {fileID: 1661624110}
-  BallGO: {fileID: 416120613}
+  sceneBackgroundColor: {fileID: 1106124481}
+  mainMenu: {fileID: 156467711}
+  gameScene: {fileID: 1661624110}
+  ballGO: {fileID: 416120613}
+  gameScoreHide: {fileID: 1912325923}
 --- !u!114 &288910523
 MonoBehaviour:
   m_ObjectHideFlags: 0

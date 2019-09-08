@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class PlanetChooser : MonoBehaviour {
 
     [SerializeField]
-    GameObject SceneBackgroundColor;
+    GameObject sceneBackgroundColor;
     [SerializeField]
-    GameObject MainMenu;
+    GameObject mainMenu;
     [SerializeField]
-    GameObject GameScene;
+    GameObject gameScene;
     [SerializeField]
-    GameObject BallGO;
+    GameObject ballGO;
+    [SerializeField]
+    GameObject gameScoreHide;
 
     float earthGravity = -9.8f;
     float moonGravity = -1.6f;
@@ -25,9 +27,10 @@ public class PlanetChooser : MonoBehaviour {
         currentGravity = Physics2D.gravity;
         planetName = gameObject.name;
         Debug.Log(currentGravity + " " + planetName);
-        GameScene.SetActive(false);
-        BallGO.transform.position = new Vector3(-6f, 4, -3);
-        MainMenu.SetActive(true);
+        gameScene.SetActive(false);
+        ballGO.transform.position = new Vector3(-6f, 4, -3);
+        mainMenu.SetActive(true);
+        gameScoreHide.SetActive(true);
     }
     private void Update()
     {
@@ -35,9 +38,10 @@ public class PlanetChooser : MonoBehaviour {
         {
             //if (Application.platform == RuntimePlatform.Android)
             //{
-                BallGO.transform.position = new Vector3(-6f, 4, -3);
-                GameScene.SetActive(false);
-                MainMenu.SetActive(true);
+                ballGO.transform.position = new Vector3(-6f, 4, -3);
+                gameScene.SetActive(false);
+                mainMenu.SetActive(true);
+                gameScoreHide.SetActive(true);
             //}
             //else
             //{
@@ -49,27 +53,30 @@ public class PlanetChooser : MonoBehaviour {
     }   
     public void EarthChoosen ()
     {
-        SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.56f, 0.77f, 1f, 1f);
-        BallGO.GetComponent<Rigidbody2D>().gravityScale = 1f; // earth
-        Debug.Log("earth choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
-        GameScene.SetActive(true);
-        MainMenu.SetActive(false);
-        
+        sceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.56f, 0.77f, 1f, 1f);
+        ballGO.GetComponent<Rigidbody2D>().gravityScale = 1f; // earth
+        Debug.Log("earth choosen" + ballGO.GetComponent<Rigidbody2D>().gravityScale);
+        gameScene.SetActive(true);
+        mainMenu.SetActive(false);
+        gameScoreHide.SetActive(false);
+
     }
     public void MoonChoosen()
     {
-        SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.79f, 0.79f, 0.79f, 1f);
-        BallGO.GetComponent<Rigidbody2D>().gravityScale = 0.163f; //  1.6/9.81 = 0.163
-        Debug.Log("moon choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
-        GameScene.SetActive(true);
-        MainMenu.SetActive(false);
+        sceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.79f, 0.79f, 0.79f, 1f);
+        ballGO.GetComponent<Rigidbody2D>().gravityScale = 0.163f; //  1.6/9.81 = 0.163
+        Debug.Log("moon choosen" + ballGO.GetComponent<Rigidbody2D>().gravityScale);
+        gameScene.SetActive(true);
+        mainMenu.SetActive(false);
+        gameScoreHide.SetActive(false);
     }
     public void JupiterChoosen()
     {
-        BallGO.GetComponent<Rigidbody2D>().gravityScale = 2.497f; // 24.5/9.8 = 2.497
-        Debug.Log("jupiter choosen" + BallGO.GetComponent<Rigidbody2D>().gravityScale);
-        SceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.72f, 0.25f, 1f, 1f);
-        GameScene.SetActive(true);
-        MainMenu.SetActive(false);
+        ballGO.GetComponent<Rigidbody2D>().gravityScale = 2.497f; // 24.5/9.8 = 2.497
+        Debug.Log("jupiter choosen" + ballGO.GetComponent<Rigidbody2D>().gravityScale);
+        sceneBackgroundColor.GetComponent<SpriteRenderer>().color = new Color(0.72f, 0.25f, 1f, 1f);
+        gameScene.SetActive(true);
+        mainMenu.SetActive(false);
+        gameScoreHide.SetActive(false);
     }
 }
