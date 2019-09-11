@@ -1,4 +1,4 @@
-# TestProject1 
+# TestProject1 unity version 2018.2
 2D demo game
 
 Task:
